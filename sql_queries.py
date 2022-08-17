@@ -9,7 +9,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 # CREATE TABLES
 
 songplay_table_create = ("""
-    CREATE TABLE IF NOT EXISTS songplays (songplay_id int NOT NULL PRIMARY KEY, start_time bigint NOT NULL, user_id int NOT NULL, level varchar NOT NULL, song_id varchar, artist_id varchar, session_id int NOT NULL, location varchar, user_agent varchar)
+    CREATE TABLE IF NOT EXISTS songplays (songplay_id serial NOT NULL PRIMARY KEY, start_time bigint NOT NULL, user_id int, level varchar NOT NULL, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar)
 """)
 
 user_table_create = ("""
@@ -17,7 +17,7 @@ user_table_create = ("""
 """)
 
 song_table_create = ("""
-    CREATE TABLE IF NOT EXISTS songs (song_id varchar NOT NULL PRIMARY KEY, title varchar NOT NULL, artist_id varchar NOT NULL, year int NOT NULL, duration numeric NOT NULL)
+    CREATE TABLE IF NOT EXISTS songs (song_id varchar NOT NULL PRIMARY KEY, title varchar NOT NULL, artist_id varchar, year int NOT NULL, duration numeric NOT NULL)
 """)
 
 artist_table_create = ("""
@@ -32,9 +32,9 @@ time_table_create = ("""
 
 songplay_table_insert = ("""
     INSERT INTO songplays
-        (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+        (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
     VALUES
-        (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        (%s, %s, %s, %s, %s, %s, %s, %s)
     ON CONFLICT (songplay_id) DO UPDATE
         SET start_time = EXCLUDED.start_time,
             user_id = EXCLUDED.user_id,
