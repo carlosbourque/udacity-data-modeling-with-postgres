@@ -9,23 +9,64 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 # CREATE TABLES
 
 songplay_table_create = ("""
-    CREATE TABLE IF NOT EXISTS songplays (songplay_id serial NOT NULL PRIMARY KEY, start_time bigint NOT NULL, user_id int, level varchar NOT NULL, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar)
+CREATE TABLE IF NOT EXISTS songplays
+  (
+     songplay_id SERIAL NOT NULL PRIMARY KEY,
+     start_time  BIGINT NOT NULL,
+     user_id     INT,
+     level       VARCHAR NOT NULL,
+     song_id     VARCHAR,
+     artist_id   VARCHAR,
+     session_id  INT,
+     location    VARCHAR,
+     user_agent  VARCHAR
+  ) 
 """)
 
 user_table_create = ("""
-    CREATE TABLE IF NOT EXISTS users (user_id int NOT NULL PRIMARY KEY, first_name varchar, last_name varchar NOT NULL, gender varchar, level varchar NOT NULL)
+CREATE TABLE IF NOT EXISTS users
+  (
+     user_id    INT NOT NULL PRIMARY KEY,
+     first_name VARCHAR,
+     last_name  VARCHAR NOT NULL,
+     gender     VARCHAR,
+     level      VARCHAR NOT NULL
+  ) 
 """)
 
 song_table_create = ("""
-    CREATE TABLE IF NOT EXISTS songs (song_id varchar NOT NULL PRIMARY KEY, title varchar NOT NULL, artist_id varchar, year int NOT NULL, duration numeric NOT NULL)
+CREATE TABLE IF NOT EXISTS songs
+  (
+     song_id   VARCHAR NOT NULL PRIMARY KEY,
+     title     VARCHAR NOT NULL,
+     artist_id VARCHAR,
+     year      INT NOT NULL,
+     duration  NUMERIC NOT NULL
+  ) 
 """)
 
 artist_table_create = ("""
-    CREATE TABLE IF NOT EXISTS artists (artist_id varchar NOT NULL PRIMARY KEY, name varchar NOT NULL, location varchar, latitude float8, longitude float8)
+CREATE TABLE IF NOT EXISTS artists
+  (
+     artist_id VARCHAR NOT NULL PRIMARY KEY,
+     name      VARCHAR NOT NULL,
+     location  VARCHAR,
+     latitude  FLOAT8,
+     longitude FLOAT8
+  ) 
 """)
 
 time_table_create = ("""
-    CREATE TABLE IF NOT EXISTS time (start_time bigint NOT NULL PRIMARY KEY, hour int NOT NULL, day int NOT NULL, week int NOT NULL, month int NOT NULL, year int NOT NULL, weekday int NOT NULL)
+CREATE TABLE IF NOT EXISTS time
+  (
+     start_time BIGINT NOT NULL PRIMARY KEY,
+     hour       INT NOT NULL,
+     day        INT NOT NULL,
+     week       INT NOT NULL,
+     month      INT NOT NULL,
+     year       INT NOT NULL,
+     weekday    INT NOT NULL
+  ) 
 """)
 
 # INSERT RECORDS
