@@ -12,8 +12,8 @@ songplay_table_create = ("""
 CREATE TABLE IF NOT EXISTS songplays
   (
      songplay_id SERIAL NOT NULL PRIMARY KEY,
-     start_time  BIGINT NOT NULL,
-     user_id     INT,
+     start_time  TIMESTAMP NOT NULL,
+     user_id     INT NOT NULL,
      level       VARCHAR NOT NULL,
      song_id     VARCHAR,
      artist_id   VARCHAR,
