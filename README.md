@@ -2,19 +2,16 @@
 # Sparkify - Data Modeling with Postgres
 
 ## Summary
----------
 
 This project analyzes the data collected on songs and user activity on the Sparkify music streaming app. The purpose of the project is understanding the songs users are listening to.
 
 A Postgress database is used to store and collected analytics on the data collected.
 
 ## Running the scripts
------------
 
 
 
 ## Files Description
----------------
 
 ### Song Dataset
 
