@@ -7,10 +7,6 @@ This project analyzes the data collected on songs and user activity on the Spark
 
 A Postgress database is used to store and collected analytics on the data collected.
 
-## Running the scripts
-
-
-
 ## Files Description
 
 ### Song Dataset
@@ -78,3 +74,6 @@ This is an example of an entry on a log file:
 - `etl.py` reads and processes files from `song_data` and `log_data` and loads them into the tables.
 - `etl.pynb` reads and processes a single file from `song_data` and `log_data` and loads the data into the tables. This notebook contains detailed instructions on the ETL process for each of the tables.
 - `test.pynb` contains testing on the database structure and data loaded.
+
+## Running the scripts
+
