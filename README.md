@@ -77,3 +77,5 @@ This is an example of an entry on a log file:
 
 ## Running the scripts
 
+- Run `create_tables.py` in terminal
+- Run `etl.py` to extract the information from data files and store iit into the corresponding tables
