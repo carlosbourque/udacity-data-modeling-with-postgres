@@ -7,8 +7,6 @@ This project analyzes the data collected on songs and user activity on the Spark
 
 A Postgress database is used to store and collected analytics on the data collected.
 
-## Files Description
-
 ### Song Dataset
 
 The first dataset is a subset of real data from the [Million Song Dataset](http://millionsongdataset.com/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are file paths to two files in this dataset.
@@ -67,6 +65,12 @@ This is an example of an entry on a log file:
 }
 ```
 
+### ER Diagram
+
+The following image describes the data base structure as well as the table relationships
+
+![alt text](sparkifydb_erd.png "Title")
+
 ### Project Files
 
 - `create_tables.py` drops and creates your tables.
@@ -75,6 +79,7 @@ This is an example of an entry on a log file:
 - `etl.pynb` reads and processes a single file from `song_data` and `log_data` and loads the data into the tables. This notebook contains detailed instructions on the ETL process for each of the tables.
 - `test.pynb` contains testing on the database structure and data loaded.
 - `er_diagram.py` automaticlly generates an ER diagram
+- `sparkifydb_erd.png` Describes the data base structure as well as the table relationships
 
 ## Running the scripts
 
