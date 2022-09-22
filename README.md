@@ -74,6 +74,7 @@ This is an example of an entry on a log file:
 - `etl.py` reads and processes files from `song_data` and `log_data` and loads them into the tables.
 - `etl.pynb` reads and processes a single file from `song_data` and `log_data` and loads the data into the tables. This notebook contains detailed instructions on the ETL process for each of the tables.
 - `test.pynb` contains testing on the database structure and data loaded.
+- `er_diagram.py` automaticlly generates an ER diagram
 
 ## Running the scripts
 

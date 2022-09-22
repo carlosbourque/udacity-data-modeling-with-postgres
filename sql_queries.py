@@ -19,7 +19,10 @@ CREATE TABLE IF NOT EXISTS songplays
      artist_id   VARCHAR,
      session_id  INT,
      location    VARCHAR,
-     user_agent  VARCHAR
+     user_agent  VARCHAR,
+     CONSTRAINT fk_start_time
+        FOREIGN KEY (start_time)
+            REFERENCES time (start_time)
   ) 
 """)
 
@@ -59,7 +62,7 @@ CREATE TABLE IF NOT EXISTS artists
 time_table_create = ("""
 CREATE TABLE IF NOT EXISTS time
   (
-     start_time BIGINT NOT NULL PRIMARY KEY,
+     start_time TIMESTAMP NOT NULL PRIMARY KEY,
      hour       INT NOT NULL,
      day        INT NOT NULL,
      week       INT NOT NULL,
@@ -206,5 +209,5 @@ AND
 
 # QUERY LISTS
 
-create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
+create_table_queries = [user_table_create, song_table_create, artist_table_create, time_table_create, songplay_table_create]
 drop_table_queries = [songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
